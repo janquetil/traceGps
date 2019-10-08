@@ -329,10 +329,10 @@ class DAO
     
     // Le code restant à développer va être réparti entre les membres de l'équipe de développement.
     // Afin de limiter les conflits avec GitHub, il est décidé d'attribuer une zone de ce fichier à chaque développeur.
-    // Développeur 1 : lignes 350 à 549
-    // Développeur 2 : lignes 550 à 749
-    // Développeur 3 : lignes 750 à 949
-    // Développeur 4 : lignes 950 à 1150
+    // Développeur 1 : lignes 350 à 549 Julien
+    // Développeur 2 : lignes 550 à 749 Mathieu
+    // Développeur 3 : lignes 750 à 949 Nicolas
+    // Développeur 4 : lignes 950 à 1150 Dylan
     
     // Quelques conseils pour le travail collaboratif :
     // avant d'attaquer un cycle de développement (début de séance, nouvelle méthode, ...), faites un Pull pour récupérer 
@@ -344,7 +344,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 1 (xxxxxxxxxxxxxxxxxxxx) : lignes 350 à 549
+    // début de la zone attribuée au développeur 1 (xxxxxxxxxxxxxxxxxxxx) : lignes 350 à 549 Julien
     // --------------------------------------------------------------------------------------
     
 
@@ -544,7 +544,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 2 (xxxxxxxxxxxxxxxxxxxx) : lignes 550 à 749
+    // début de la zone attribuée au développeur 2 (xxxxxxxxxxxxxxxxxxxx) : lignes 550 à 749 Mathieu
     // --------------------------------------------------------------------------------------
     
 
@@ -744,7 +744,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 3 (xxxxxxxxxxxxxxxxxxxx) : lignes 750 à 949
+    // début de la zone attribuée au développeur 3 (xxxxxxxxxxxxxxxxxxxx) : lignes 750 à 949 Nicolas
     // --------------------------------------------------------------------------------------
     
     
@@ -944,7 +944,7 @@ class DAO
     
    
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 4 (xxxxxxxxxxxxxxxxxxxx) : lignes 950 à 1150
+    // début de la zone attribuée au développeur 4 (xxxxxxxxxxxxxxxxxxxx) : lignes 950 à 1150 Dylan
     // --------------------------------------------------------------------------------------
     
     
