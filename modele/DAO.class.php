@@ -348,7 +348,25 @@ class DAO
     // début de la zone attribuée au développeur 1 (Julien) : lignes 350 à 549 Julien
     // --------------------------------------------------------------------------------------
     
-
+    public function existeAdrMailUtilisateur($adrMail){
+        $txt_req = "Select count(*) as nb";
+        $txt_req .= " from tracegps_vue_utilisateurs";
+        $txt_req .= " where adrMail = :adrMail";
+        
+        $req = $this->cnx->prepare($txt_req);
+        // liaison de la requête et de ses paramètres
+        $req->bindValue("adrMail", $adrMail, PDO::PARAM_STR);
+        // extraction des données
+        $req->execute();
+        $uneLigne = $req->fetch(PDO::FETCH_OBJ);
+        $req->closeCursor();
+        
+        if ($uneLigne->nb == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     
     
     
