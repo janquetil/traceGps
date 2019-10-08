@@ -346,8 +346,7 @@ class DAO
     
     // --------------------------------------------------------------------------------------
     // début de la zone attribuée au développeur 1 (Julien) : lignes 350 à 549 Julien
-    // --------------------------------------------------------------------------------------
-    
+    // -------------------------------------------------------------------------------------- 
     public function existeAdrMailUtilisateur($adrMail){
         $txt_req = "Select count(*) as nb";
         $txt_req .= " from tracegps_vue_utilisateurs";
@@ -544,28 +543,41 @@ class DAO
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     // --------------------------------------------------------------------------------------
     // début de la zone attribuée au développeur 2 (mathieu) : lignes 550 à 749 Mathieu
     // --------------------------------------------------------------------------------------
-    
+    public function getUneTrace($idTrace) {
+        // préparation de la requête de recherche
+        $txt_req = "SELECT *";
+        $txt_req .= " from tracegps_traces";
+        $txt_req .= " where id = :id";
+        $req = $this->cnx->prepare($txt_req);
+        // liaison de la requête et de ses paramètres
+        $req->bindValue("id", $idTrace, PDO::PARAM_STR);
+        // extraction des données
+        $req->execute();
+        $uneLigne = $req->fetch(PDO::FETCH_OBJ);
+        // libère les ressources du jeu de données
+        $req->closeCursor();
+        
+        // traitement de la réponse
+        if ( ! $uneLigne) {
+            return null;
+        }
+        else {
+            // création d'un objet Utilisateur
+            $unId = utf8_encode($uneLigne->id);
+            $uneDateDebut = utf8_encode($uneLigne->dateDebut);
+            $uneDateFin = utf8_encode($uneLigne->dateFin);
+            $unTerminee = utf8_encode($uneLigne->terminee);
+            $unIdUtilisateur = utf8_encode($uneLigne->idUtilisateur);
+            
+            
+            $uneTrace = new Trace($unId, $uneDateDebut, $uneDateFin, $unTerminee, $unIdUtilisateur);
+            return $uneTrace;
+        }
+    }
 
     
     
@@ -713,37 +725,7 @@ class DAO
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
     
     
@@ -1000,7 +982,48 @@ class DAO
     // --------------------------------------------------------------------------------------
     // début de la zone attribuée au développeur 4 (Dylan) : lignes 950 à 1150 Dylan
     // --------------------------------------------------------------------------------------
-    
+    public function getLesUtilisateursAutorises($idUtilisateur) {
+        // préparation de la requête de recherche
+        $txt_req = "Select *";
+        $txt_req .= " from tracegps_vue_utilisateurs";
+        $txt_req .= " where niveau = 1";
+        $txt_req .= "AND id in (
+	select idAutorise from tracegps_autorisations
+    where idAutorisant = :idAutorisant)";
+        
+        
+        $req = $this->cnx->prepare($txt_req);
+        // extraction des données
+        $req->bindValue("idAutorisant", $idUtilisateur, PDO::PARAM_STR);
+        $req->execute();
+        
+        
+        // construction d'une collection d'objets Utilisateur
+        $lesUtilisateurs = array();
+        // tant qu'une ligne est trouvée :
+        while ($uneLigne = $req->fetch(PDO::FETCH_OBJ)) {
+            // création d'un objet Utilisateur
+            $unId = utf8_encode($uneLigne->id);
+            $unPseudo = utf8_encode($uneLigne->pseudo);
+            $unMdpSha1 = utf8_encode($uneLigne->mdpSha1);
+            $uneAdrMail = utf8_encode($uneLigne->adrMail);
+            $unNumTel = utf8_encode($uneLigne->numTel);
+            $unNiveau = utf8_encode($uneLigne->niveau);
+            $uneDateCreation = utf8_encode($uneLigne->dateCreation);
+            $unNbTraces = utf8_encode($uneLigne->nbTraces);
+            $uneDateDerniereTrace = utf8_encode($uneLigne->dateDerniereTrace);
+            
+            
+            $unUtilisateur = new Utilisateur($unId, $unPseudo, $unMdpSha1, $uneAdrMail, $unNumTel, $unNiveau, $uneDateCreation, $unNbTraces, $uneDateDerniereTrace);
+            // ajout de l'utilisateur à la collection
+            $lesUtilisateurs[] = $unUtilisateur;
+            // extrait la ligne suivante
+        }
+        // libère les ressources du jeu de données
+        $req->closeCursor();
+        // fourniture de la collection
+        return $lesUtilisateurs;
+    }
     
     
     
