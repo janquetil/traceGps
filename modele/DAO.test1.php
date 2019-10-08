@@ -40,6 +40,12 @@ echo "<p>Existence de l'utilisateur 'admin@gmail.com' : <b>" . $existe . "</b><b
 if ($dao->existeAdrMailUtilisateur("delasalle.sio.alp.d@gmail.com")) $existe = "oui"; else $existe = "non";
 echo "Existence de l'utilisateur 'delasalle.sio.eleves@gmail.com' : <b>" . $existe . "</b></br>";
 
+echo "<h3>Test de autoriseAConsulter : </h3>";
+if ($dao->autoriseAConsulter(2, 3)) $autorise = "oui"; else $autorise = "non";
+echo "<p>L'utilisateur 2 autorise l'utilisateur 3 : <b>" . $autorise . "</b><br>";
+
+if ($dao->autoriseAConsulter(3, 2)) $autorise = "oui"; else $autorise = "non";
+echo "<p>L'utilisateur 3 autorise l'utilisateur 2 : <b>" . $autorise . "</b><br>";
 
 
 
