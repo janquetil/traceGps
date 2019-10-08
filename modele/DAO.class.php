@@ -333,6 +333,7 @@ class DAO
     // Développeur 2 : lignes 550 à 749 Mathieu
     // Développeur 3 : lignes 750 à 949 Nicolas
     // Développeur 4 : lignes 950 à 1150 Dylan
+    //https://trello.com/invite/b/lCBP9Qep/5908308bacfdbaad39e1a526eb2455f6/ppe-sio2
     
     // Quelques conseils pour le travail collaboratif :
     // avant d'attaquer un cycle de développement (début de séance, nouvelle méthode, ...), faites un Pull pour récupérer 
@@ -344,7 +345,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 1 (xxxxxxxxxxxxxxxxxxxx) : lignes 350 à 549 Julien
+    // début de la zone attribuée au développeur 1 (Julien) : lignes 350 à 549 Julien
     // --------------------------------------------------------------------------------------
     
 
@@ -544,7 +545,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 2 (xxxxxxxxxxxxxxxxxxxx) : lignes 550 à 749 Mathieu
+    // début de la zone attribuée au développeur 2 (mathieu) : lignes 550 à 749 Mathieu
     // --------------------------------------------------------------------------------------
     
 
@@ -744,7 +745,7 @@ class DAO
     
     
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 3 (xxxxxxxxxxxxxxxxxxxx) : lignes 750 à 949 Nicolas
+    // début de la zone attribuée au développeur 3 (Nicolas) : lignes 750 à 949 Nicolas
     // --------------------------------------------------------------------------------------
     
     
@@ -944,7 +945,7 @@ class DAO
     
    
     // --------------------------------------------------------------------------------------
-    // début de la zone attribuée au développeur 4 (xxxxxxxxxxxxxxxxxxxx) : lignes 950 à 1150 Dylan
+    // début de la zone attribuée au développeur 4 (Dylan) : lignes 950 à 1150 Dylan
     // --------------------------------------------------------------------------------------
     
     
