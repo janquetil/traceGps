@@ -547,7 +547,37 @@ class DAO
     // --------------------------------------------------------------------------------------
     // début de la zone attribuée au développeur 2 (mathieu) : lignes 550 à 749 Mathieu
     // --------------------------------------------------------------------------------------
-    
+    public function getUneTrace($idTrace) {
+        // préparation de la requête de recherche
+        $txt_req = "SELECT *";
+        $txt_req .= " from tracegps_traces";
+        $txt_req .= " where id = :id";
+        $req = $this->cnx->prepare($txt_req);
+        // liaison de la requête et de ses paramètres
+        $req->bindValue("id", $idTrace, PDO::PARAM_STR);
+        // extraction des données
+        $req->execute();
+        $uneLigne = $req->fetch(PDO::FETCH_OBJ);
+        // libère les ressources du jeu de données
+        $req->closeCursor();
+        
+        // traitement de la réponse
+        if ( ! $uneLigne) {
+            return null;
+        }
+        else {
+            // création d'un objet Utilisateur
+            $unId = utf8_encode($uneLigne->id);
+            $uneDateDebut = utf8_encode($uneLigne->dateDebut);
+            $uneDateFin = utf8_encode($uneLigne->dateFin);
+            $unTerminee = utf8_encode($uneLigne->terminee);
+            $unIdUtilisateur = utf8_encode($uneLigne->idUtilisateur);
+            
+            
+            $uneTrace = new Trace($unId, $uneDateDebut, $uneDateFin, $unTerminee, $unIdUtilisateur);
+            return $uneTrace;
+        }
+    }
 
     
     
