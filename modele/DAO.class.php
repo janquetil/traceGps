@@ -368,24 +368,21 @@ class DAO
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public function autoriseAConsulter($idAutorisant, $idAutorise) {
+        $txt_req = "Select idAutorise as id";
+        $txt_req .= " from tracegps_autorisations";
+        $txt_req .= " where idAutorisant = :idAutoriant";
+        
+        $req = $this->cnx->prepare($txt_req);
+        // liaison de la requête et de ses paramètres
+        $req->bindValue("idAutoriant", $idAutorisant, PDO::PARAM_STR);
+        $req->execute();
+        
+        while($uneLigne = $req->fetch(PDO::FETCH_OBJ)) {
+            if ($uneLigne->id == $idAutorise) {return true;}
+        }
+        return false;
+    }
     
     
     
