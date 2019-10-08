@@ -803,8 +803,7 @@ class DAO
         // fourniture de la réponse
         return $lesPointsDeTrace;
     }
-    
-
+   
     
     
     
