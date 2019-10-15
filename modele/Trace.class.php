@@ -127,7 +127,7 @@ class Trace
         $denPosTot = 0;
         $i = 1;
         foreach($this->lesPointsDeTrace as $unPoint) {
-            if ($i + 1 == sizeof($this->lesPointsDeTrace)) {break;}
+            if ($i == sizeof($this->lesPointsDeTrace)) {break;}
             
             if ($unPoint->getAltitude() < $this->lesPointsDeTrace[$i]->getAltitude()) {
                 $denPosTot += $this->lesPointsDeTrace[$i]->getAltitude() - $unPoint->getAltitude();
@@ -142,7 +142,7 @@ class Trace
         $denNegTot = 0;
         $i = 1;
         foreach($this->lesPointsDeTrace as $unPoint) {
-            if ($i + 1 == sizeof($this->lesPointsDeTrace)) {break;}
+            if ($i == sizeof($this->lesPointsDeTrace)) {break;}
             
             if ($unPoint->getAltitude() > $this->lesPointsDeTrace[$i]->getAltitude()) {
                 $denNegTot += $unPoint->getAltitude() - $this->lesPointsDeTrace[$i]->getAltitude();

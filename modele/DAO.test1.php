@@ -30,27 +30,37 @@
 include_once ('DAO.class.php');
 $dao = new DAO();
 
+// test de la méthode creerUnPointDeTrace ---------------------------------------------------------
+// modifié par Jim le 13/8/2018
+echo "<h3>Test de creerUnPointDeTrace : </h3>";
+// on affiche d'abord le nombre de points (5) de la trace 1
+$lesPoints = $dao->getLesPointsDeTrace(1);
+$nbPoints = sizeof($lesPoints);
+echo "<p>Nombre de points de la trace 1 : " . $nbPoints . "</p>";
+// on crée un sixième point et on l'ajoute à la trace 1
+$unIdTrace = 1;
+$unID = 6;
+$uneLatitude = 48.20;
+$uneLongitude = -1.55;
+$uneAltitude = 50;
+$uneDateHeure = date('Y-m-d H:i:s', time());
+$unRythmeCardio = 80;
+$unTempsCumule = 0;
+$uneDistanceCumulee = 0;
+$uneVitesse = 15;
+$unPoint = new PointDeTrace($unIdTrace, $unID, $uneLatitude, $uneLongitude, $uneAltitude, $uneDateHeure, $unRythmeCardio, $unTempsCumule, $uneDistanceCumulee, $uneVitesse);
+$ok = $dao->creerUnPointDeTrace($unPoint);
+// on affiche à nouveau le nombre de points (6) de la trace 1
+$lesPoints = $dao->getLesPointsDeTrace(1);
+$nbPoints = sizeof($lesPoints);
+echo "<p>Nombre de points de la trace 1 : " . $nbPoints . "</p>";
+echo ('<br>');
+
+
+
 
 // test de la méthode existeAdrMailUtilisateur ----------------------------------------------------------
 // modifié par Julien le 08/10/2019
-
-echo "<h3>Test de existeAdrMailUtilisateur : </h3>";
-if ($dao->existeAdrMailUtilisateur("admin@gmail.com")) $existe = "oui"; else $existe = "non";
-echo "<p>Existence de l'utilisateur 'admin@gmail.com' : <b>" . $existe . "</b><br>";
-if ($dao->existeAdrMailUtilisateur("delasalle.sio.alp.d@gmail.com")) $existe = "oui"; else $existe = "non";
-echo "Existence de l'utilisateur 'delasalle.sio.eleves@gmail.com' : <b>" . $existe . "</b></br>";
-
-echo "<h3>Test de autoriseAConsulter : </h3>";
-if ($dao->autoriseAConsulter(2, 3)) $autorise = "oui"; else $autorise = "non";
-echo "<p>L'utilisateur 2 autorise l'utilisateur 3 : <b>" . $autorise . "</b><br>";
-
-if ($dao->autoriseAConsulter(3, 2)) $autorise = "oui"; else $autorise = "non";
-echo "<p>L'utilisateur 3 autorise l'utilisateur 2 : <b>" . $autorise . "</b><br>";
-
-
-
-
-
 
 // ferme la connexion à MySQL :
 unset($dao);
