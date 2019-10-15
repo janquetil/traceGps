@@ -423,70 +423,70 @@ class DAO
         return true;
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public function getToutesLesTraces() {
+        $req = "select * from tracegps_traces";
+        $requete = $this->cnx->prepare($req);
+        $requete->execute();
+        
+        $tableau = array();
+        
+        while($li = $requete->fetch(PDO::FETCH_OBJ)) {
+            $trace = new Trace($li->id, $li->dateDebut, $li->dateFin, $li->terminee, $li->idUtilisateur);
+            
+            foreach(DAO::getLesPointsDeTrace($li->id) as $ptTrace) {
+                $trace->ajouterPoint($ptTrace);
+            }
+            $tableau[] = $trace;
+        }
+        
+        return $tableau;
+    }
+    
+    public function getLesTraces($idUtilisateur) {
+        $req = "select * from tracegps_traces where idUtilisateur = :idUti";
+        $requete = $this->cnx->prepare($req);
+        $requete->bindValue("idUti", $idUtilisateur, PDO::PARAM_INT);
+        $requete->execute();
+        
+        $tableau = array();
+        
+        while($li = $requete->fetch(PDO::FETCH_OBJ)){
+            $trace = new Trace($li->id, $li->dateDebut, $li->dateFin, $li->terminee, $li->idUtilisateur);
+            
+            foreach(DAO::getLesPointsDeTrace($li->id) as $ptTrace) {
+                $trace->ajouterPoint($ptTrace);
+            }
+            $tableau[] = $trace;
+        }
+        
+        return $tableau;
+    }
+    
+    public function creerUnPointDeTrace($unPtDeTrace) {
+        if ($unPtDeTrace->getId() == 1) {
+            $req = "update tracegps_traces set dateDebut = :dateDeb where id = :idTrace";
+            $requete = $this->cnx->prepare($req);
+            $requete->bindValue("dateDeb", $unPtDeTrace->getDateHeure(), PDO::PARAM_STR);
+            $requete->bindValue("idTrace", $unPtDeTrace->getIdTrace(), PDO::PARAM_INT);
+            $requete->execute();
+        }
+        $req2 = "insert into tracegps_points values(:idTrace, :id, :latitude, :longitude, :altitude, :dateHeure, :rythmeCardio)";
+        $requete2 = $this->cnx->prepare($req2);
+        $requete2->bindValue("idTrace", $unPtDeTrace->getIdTrace(), PDO::PARAM_INT);
+        $requete2->bindValue("id", $unPtDeTrace->getId(), PDO::PARAM_INT);
+        $requete2->bindValue("latitude", $unPtDeTrace->getLatitude());
+        $requete2->bindValue("longitude", $unPtDeTrace->getLongitude());
+        $requete2->bindValue("altitude", $unPtDeTrace->getAltitude());
+        $requete2->bindValue("dateHeure", $unPtDeTrace->getDateHeure(), PDO::PARAM_STR);
+        $requete2->bindValue("rythmeCardio", $unPtDeTrace->getRythmeCardio(), PDO::PARAM_INT);
+        try {
+            $requete2->execute();
+        } catch (Exception $e) {
+            return false;
+        }
+        
+        return true;
+    }
     
     
     
