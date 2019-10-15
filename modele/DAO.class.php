@@ -383,7 +383,45 @@ class DAO
         return false;
     }
     
+    public function creerUneAutorisation($idAutorisant, $idAutorise) {
+        
+        $req2 = "select idAutorise from tracegps_autorisations where idAutorisant = :idauto";
+        $requete2 = $this->cnx->prepare($req2);
+        $requete2->bindValue("idauto", $idAutorisant, PDO::PARAM_INT);
+        $requete2->execute();
+        while($uneLigne = $requete2->fetch(PDO::FETCH_OBJ)) {
+            if ($uneLigne->idAutorise == $idAutorise) {return false;}
+        }
+        
+        $req = "insert into tracegps_autorisations";
+        $req .= " values(:idAutorisant, :idAutorise)";
+        
+        $requete = $this->cnx->prepare($req);
+        $requete->bindValue("idAutorisant", $idAutorisant, PDO::PARAM_INT);
+        $requete->bindValue("idAutorise", $idAutorise, PDO::PARAM_INT);
+        $requete->execute();
+        return true;
+    }
     
+    public function supprimerUneAutorisation($idAutorisant, $idAutorise) {
+        $req2 = "select idAutorise from tracegps_autorisations where idAutorisant = :idauto";
+        $requete2 = $this->cnx->prepare($req2);
+        $requete2->bindValue("idauto", $idAutorisant, PDO::PARAM_INT);
+        $requete2->execute();
+        $x = false;
+        while($uneLigne = $requete2->fetch(PDO::FETCH_OBJ)) {
+            if ($uneLigne->idAutorise == $idAutorise) {$x = true;}
+        }
+        if ($x == false) { return false; }
+        
+        $req = "delete from tracegps_autorisations where idAutorisant = :idauto and idAutorise = :idautorise";
+        
+        $requete = $this->cnx->prepare($req);
+        $requete->bindValue("idauto", $idAutorisant, PDO::PARAM_INT);
+        $requete->bindValue("idautorise", $idAutorise, PDO::PARAM_INT);
+        $requete->execute();
+        return true;
+    }
     
     
     
@@ -506,44 +544,6 @@ class DAO
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
     // --------------------------------------------------------------------------------------
     // début de la zone attribuée au développeur 2 (mathieu) : lignes 550 à 749 Mathieu
     // --------------------------------------------------------------------------------------
