@@ -591,6 +591,17 @@ class DAO
     
     
     
+    public function terminerUneTrace($idTrace) {
+        // préparation de la requête
+        $txt_req = "update tracegps_traces set terminee = 1 ";
+        $txt_req .= " where id = :id";
+        $req = $this->cnx->prepare($txt_req);
+        // liaison de la requête et de ses paramètres
+        $req->bindValue("id", $idTrace, PDO::PARAM_STR);
+        // exécution de la requête
+        $ok = $req->execute();
+        return $ok;
+    }
     
     
     
@@ -724,17 +735,6 @@ class DAO
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
     
     
     
