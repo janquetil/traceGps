@@ -549,9 +549,9 @@ class DAO
     // --------------------------------------------------------------------------------------
     public function getUneTrace($idTrace) {
         // préparation de la requête de recherche
-        $txt_req = "SELECT *";
-        $txt_req .= " from tracegps_traces";
-        $txt_req .= " where id = :id";
+        $txt_req = "SELECT * ";
+        $txt_req .= " from tracegps_traces ";
+        $txt_req .= " WHERE id = :id";
         $req = $this->cnx->prepare($txt_req);
         // liaison de la requête et de ses paramètres
         $req->bindValue("id", $idTrace, PDO::PARAM_STR);
@@ -572,9 +572,18 @@ class DAO
             $uneDateFin = utf8_encode($uneLigne->dateFin);
             $unTerminee = utf8_encode($uneLigne->terminee);
             $unIdUtilisateur = utf8_encode($uneLigne->idUtilisateur);
+            $lesPointsDeTrace = array();
             
             
             $uneTrace = new Trace($unId, $uneDateDebut, $uneDateFin, $unTerminee, $unIdUtilisateur);
+            
+            $lesPointsDeTrace = $this->getLesPointsDeTrace($unId);
+            
+            foreach($lesPointsDeTrace as $unPoint)
+            {
+                $uneTrace->ajouterPoint($unPoint);
+            }
+            
             return $uneTrace;
         }
     }
@@ -726,15 +735,6 @@ class DAO
     
     
    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
