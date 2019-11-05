@@ -95,21 +95,9 @@
     
     
     
-    
-    // ================================================================================================
-    
     // création du flux XML en sortie
-    function creerFluxXML($msg)
-    {
-        /* Exemple de code XML
-         <?xml version="1.0" encoding="UTF-8"?>
-         <!--Service web ChangerDeMdp - BTS SIO - Lycée De La Salle - Rennes-->
-         <data>
-         <reponse>Erreur : authentification incorrecte.</reponse>
-         </data>
-         */
-        
-        // crée une instance de DOMdocument (DOM : Document Object Model)
+    function creerFluxXML($msg,$idRelatif)
+    {	// crée une instance de DOMdocument (DOM : Document Object Model)
         $doc = new DOMDocument();
         
         // specifie la version et le type d'encodage
@@ -125,21 +113,33 @@
         $elt_data = $doc->createElement('data');
         $doc->appendChild($elt_data);
         
-        // place l'élément 'reponse' juste après l'élément 'data'
+        // place l'élément 'reponse' dans l'élément 'data'
         $elt_reponse = $doc->createElement('reponse', $msg);
         $elt_data->appendChild($elt_reponse);
+        
+        // place l'élément 'donnees' dans l'élément 'data'
+        $elt_donnees = $doc->createElement('donnees');
+        $elt_data->appendChild($elt_donnees);
+        
+        if($idRelatif != 0)
+        {
+            // crée un élément vide 'id'
+            $elt_id = $doc->createElement('id',$idRelatif);
+            // place l'élément 'id' dans l'élément 'donnees'
+            $elt_donnees->appendChild($elt_id);
+        }
+        
         
         // Mise en forme finale
         $doc->formatOutput = true;
         
         // renvoie le contenu XML
-        return $doc->saveXML();
+        echo $doc->saveXML();
+        return;
     }
     
-    // ================================================================================================
-    
     // création du flux JSON en sortie
-    function creerFluxJSON($msg)
+    function creerFluxJSON($msg,$idRelatif)
     {
         /* Exemple de code JSON
          {
@@ -148,16 +148,21 @@
          }
          }
          */
-        
-        // construction de l'élément "data"
-        $elt_data = ["reponse" => $msg];
-        
+        if($idRelatif != 0)
+        { 
+            // construction de l'élément "data"
+            $elt_data = ["reponse" => $msg, "donnees" => $idRelatif];
+        }
+        else
+        {
+            // construction de l'élément "data"
+            $elt_data = ["reponse" => $msg];
+        }
         // construction de la racine
         $elt_racine = ["data" => $elt_data];
         
         // retourne le contenu JSON (l'option JSON_PRETTY_PRINT gère les sauts de ligne et l'indentation)
-        return json_encode($elt_racine, JSON_PRETTY_PRINT);
+        echo json_encode($elt_racine, JSON_PRETTY_PRINT);
+        return;
     }
-    
-    // ================================================================================================
 ?>
