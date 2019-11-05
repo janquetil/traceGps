@@ -21,7 +21,7 @@ $dao = new DAO();
 // Récupération des données transmises
 $pseudo = ( empty($this->request['pseudo'])) ? "" : $this->request['pseudo'];
 $mdpSha1 = ( empty($this->request['mdp'])) ? "" : $this->request['mdp'];
-$pseudoConsulte = ( empty($this->request['PseudoConsulte'])) ? "" : $this->request['idTrace'];
+$pseudoConsulte = ( empty($this->request['pseudoConsulte'])) ? "" : $this->request['pseudoConsulte'];
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
@@ -30,7 +30,7 @@ if ($lang != "json") $lang = "xml";
 // La méthode HTTP utilisée doit être GET
 if ($this->getMethodeRequete() != "GET")
 {	$msg = "Erreur : méthode HTTP incorrecte.";
-$code_reponse = 406;
+    $code_reponse = 406;
 }
 else
 {
@@ -68,10 +68,12 @@ else
                     if (sizeof($lesTraces) == 0)
                     {
                         $msg = "L'utilisateur" .$pseudoConsulte. "n'a aucune traces";
+                        $code_reponse = 200;
                     }
                     else
                     {
-                        $msg = sizeof($lestraces)."traces pour l'utilisateur" .$pseudoConsulte;
+                        $msg = sizeof ($lesTraces). " traces pour l'utilisateur "  .$pseudoConsulte;
+                        $code_reponse = 200;
                     }
                     
                     
