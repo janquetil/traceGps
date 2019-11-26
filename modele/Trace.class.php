@@ -45,7 +45,7 @@ class Trace
         }
         if ($this->getTerminee()) {
             $msg .= "Terminée : Oui  <br>";
-        }
+        } 
         else {
             $msg .= "Terminée : Non  <br>";
         }

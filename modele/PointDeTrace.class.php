@@ -28,7 +28,7 @@ class PointDeTrace extends Point
             $this->distanceCumulee = $uneDistanceCumulee;
             $this->vitesse = $uneVitesse;
     }
-    
+     
     public function getIdTrace()	{return $this->idTrace;}
     public function setIdTrace($unIdTrace) {$this->idTrace = $unIdTrace;}
     

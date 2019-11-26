@@ -44,7 +44,7 @@ $uneDate5 = "2017-12-11 14:10:00";
 $point5 = new PointDeTrace(1, 5, 48.500, -1.600, 50, $uneDate5, 130, 0, 0, 0);
 $trace1->ajouterPoint($point5);
 
-
+ 
 // test de la méthode toString
 echo "<h4>méthode toString sur objet trace1 : </h4>";
 echo ($trace1->toString());

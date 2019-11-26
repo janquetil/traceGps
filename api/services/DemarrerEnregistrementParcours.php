@@ -24,7 +24,7 @@ $dao = new DAO();
 $pseudo = ( empty($this->request['pseudo'])) ? "" : $this->request['pseudo'];
 $mdpSha1 = ( empty($this->request['mdp'])) ? "" : $this->request['mdp'];
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
-
+ 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
 
