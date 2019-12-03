@@ -16,7 +16,7 @@
 //     http://<hébergeur>/tracegps/api/ChangerDeMdppseudo=europa&mdp=13e3668bbee30b004380052b086457b014504b3e&nouveauMdp=123&confirmationMdp=123&lang=xml
 
 // connexion du serveur web à la base MySQL
-
+ 
 include_once ('../modele/Outils.class.php');
 $dao = new DAO();
 
@@ -47,7 +47,7 @@ else {
         }
         else{
             if (!$dao->getUneTrace($idTrace)){
-                $msg = "Erreur : parcours inexistant.";
+                $msg = "Erreur : parcours inexistant."; 
                 $code_reponse = 400;
             }
             else {

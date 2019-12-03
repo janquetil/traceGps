@@ -7,7 +7,7 @@
 // Le service web doit recevoir 5 paramètres :
 //     pseudo : le pseudo de l'utilisateur
 //     mdp : l'ancien mot de passe hashé en sha1
-//     nouveauMdp : le nouveau mot de passe
+//     nouveauMdp : le nouveau mot de passe 
 //     confirmationMdp : la confirmation du nouveau mot de passe
 //     lang : le langage du flux de données retourné ("xml" ou "json") ; "xml" par défaut si le paramètre est absent ou incorrect
 // Le service retourne un flux de données XML ou JSON contenant un compte-rendu d'exécution
@@ -23,12 +23,12 @@ $dao = new DAO();
 // Récupération des données transmises
 $pseudo = ( empty($this->request['pseudo'])) ? "" : $this->request['pseudo'];
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
-
+ 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
 
 // La méthode HTTP utilisée doit être GET
-if ($this->getMethodeRequete() != "GET")
+if ($this->getMethodeRequete() != "GET") 
 {	$msg = "Erreur : méthode HTTP incorrecte.";
     $code_reponse = 406;
 }

@@ -13,7 +13,7 @@
 // Les paramètres doivent être passés par la méthode GET :
 //     http://<hébergeur>/tracegps/api/GetTousLesUtilisateurs?pseudo=callisto&mdp=13e3668bbee30b004380052b086457b014504b3e&lang=xml
 
-// connexion du serveur web à la base MySQL
+// connexion du serveur web à la base MySQL 
 $dao = new DAO();
 
 // Récupération des données transmises
@@ -23,14 +23,14 @@ $pseudoDestinataire = ( empty($this->request['pseudoDestinataire'])) ? "" : $thi
 $textMessage = ( empty($this->request['texteMessage'])) ? "" : $this->request['texteMessage'];
 $nomPrenom = ( empty($this->request['nomPrenom'])) ? "" : $this->request['nomPrenom'];
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
-
+ 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
 
 // La méthode HTTP utilisée doit être GET
 if ($this->getMethodeRequete() != "GET")
 {	$msg = "Erreur : méthode HTTP incorrecte.";
-    $code_reponse = 406;
+    $code_reponse = 406; 
 }
 else {
     // Les paramètres doivent être présents

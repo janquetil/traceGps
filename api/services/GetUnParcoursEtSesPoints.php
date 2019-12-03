@@ -7,7 +7,7 @@
     //     http://<hébergeur>/SupprimerUnUtilisateur.php?pseudo=admin&mdpSha1=ff9fff929a1292db1c00e3142139b22ee4925177&pseudoAsupprimer=oxygen&lang=xml
     
     // Les paramètres peuvent être passés par la méthode POST (à privilégier en exploitation pour la confidentialité des données) :
-    //     http://<hébergeur>/SupprimerUnUtilisateur.php
+    //     http://<hébergeur>/SupprimerUnUtilisateur.php 
     
     // connexion du serveur web à la base MySQL
     include_once ('../modele/DAO.class.php');
@@ -25,7 +25,7 @@
     if ( $pseudo == "" || $mdpSha1 == "" || $idTrace == "" || $lang == "")
     {	$msg = "Erreur : données incomplètes.";
     }
-    
+     
     else
     {	// il faut être utilisateur pour supprimer un parcours
         if ( $dao->getNiveauConnexion($pseudo, $mdpSha1) == 0 )

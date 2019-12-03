@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Projet TraceGPS
 // fichier : modele/DAO.class.php   (DAO : Data Access Object)
 // Rôle : fournit des méthodes d'accès à la bdd tracegps (projet TraceGPS) au moyen de l'objet PDO
@@ -27,7 +27,7 @@
 // supprimerUneAutorisation($idAutorisant, $idAutorise) : supprime l'autorisation ($idAutorisant, $idAutorise) dans la bdd
 // getLesPointsDeTrace($idTrace) : fournit la collection des points de la trace $idTrace
 // getUneTrace($idTrace) : fournit un objet Trace à partir de identifiant $idTrace
-// getToutesLesTraces() : fournit la collection de toutes les traces
+// getToutesLesTraces() : fournit la collection de toutes les traces 
 // getMesTraces($idUtilisateur) : fournit la collection des traces de l'utilisateur $idUtilisateur
 // getLesTracesAutorisees($idUtilisateur) : fournit la collection des traces que l'utilisateur $idUtilisateur a le droit de consulter
 // creerUneTrace(Trace $uneTrace) : enregistre la trace $uneTrace dans la bdd
@@ -323,7 +323,7 @@ class DAO
         $message .= "Votre mot de passe d'accès au service service TraceGPS a été modifié.\n\n";
         $message .= "Votre nouveau mot de passe est : " . $nouveauMdp ;
         $ok = Outils::envoyerMail ($adrMail, $sujet, $message, $ADR_MAIL_EMETTEUR);
-        return $ok;
+        return $ok; 
     }
     
     
@@ -449,7 +449,7 @@ class DAO
         $requete->execute();
         
         $tableau = array();
-        
+         
         while($li = $requete->fetch(PDO::FETCH_OBJ)){
             $trace = new Trace($li->id, $li->dateDebut, $li->dateFin, $li->terminee, $li->idUtilisateur);
             

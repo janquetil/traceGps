@@ -6,7 +6,7 @@
 // Rôle : ce service web permet à un utilisateur destinataire d'accepter ou de rejeter une demande d'autorisation provenant d'un utilisateur demandeur
 // il envoie un mail au demandeur avec la décision de l'utilisateur destinataire
 
-// Le service web doit être appelé avec 4 paramètres obligatoires dont les noms sont volontairement non significatifs :
+// Le service web doit être appelé avec 4 paramètres obligatoires dont les noms sont volontairement non significatifs : 
 //    a : le mot de passe (hashé) de l'utilisateur destinataire de la demande ($mdpSha1)
 //    b : le pseudo de l'utilisateur destinataire de la demande ($pseudoAutorisant)
 //    c : le pseudo de l'utilisateur source de la demande ($pseudoAutorise)
@@ -26,10 +26,10 @@ $mdpSha1 = ( empty($this->request['a'])) ? "" : $this->request['a'];
 $pseudoAutorisant = ( empty($this->request['b'])) ? "" : $this->request['b'];
 $pseudoAutorise = ( empty($this->request['c'])) ? "" : $this->request['c'];
 $decision = ( empty($this->request['d'])) ? "" : $this->request['d'];
-			 
+	 		 
 // La méthode HTTP utilisée doit être GET
 if ($this->getMethodeRequete() != "GET")
-{	$msg = "Erreur : méthode HTTP incorrecte.";
+{	$msg = "Erreur : méthode HTTP incorrecte."; 
     $code_reponse = 406;
 }
 else {

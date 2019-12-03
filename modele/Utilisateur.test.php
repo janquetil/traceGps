@@ -39,7 +39,7 @@ echo ('<br>');
 echo "<h4>méthode toString sur objet utilisateur1 : </h4>";
 echo ($utilisateur1->toString());
 echo ('<br>');
-
+ 
 // tests des mutateurs (set)
 $utilisateur1->setId(4);
 $utilisateur1->setPseudo("Sophie Fonfec");

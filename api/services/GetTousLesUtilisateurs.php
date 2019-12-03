@@ -13,7 +13,7 @@
 // Les paramètres doivent être passés par la méthode GET :
 //     http://<hébergeur>/tracegps/api/GetTousLesUtilisateurs?pseudo=callisto&mdp=13e3668bbee30b004380052b086457b014504b3e&lang=xml
 
-// connexion du serveur web à la base MySQL
+// connexion du serveur web à la base MySQL 
 $dao = new DAO();
 	
 // Récupération des données transmises
@@ -23,7 +23,7 @@ $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
-
+ 
 // initialisation du nombre de réponses
 $nbReponses = 0;
 $lesUtilisateurs = array();

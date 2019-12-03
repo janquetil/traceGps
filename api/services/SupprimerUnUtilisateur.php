@@ -8,7 +8,7 @@
 //     pseudo : le pseudo de l'administrateur
 //     mdp : le mot de passe hashé en sha1 de l'administrateur
 //     pseudoAsupprimer : le pseudo de l'utilisateur à supprimer
-//     lang : le langage du flux de données retourné ("xml" ou "json") ; "xml" par défaut si le paramètre est absent ou incorrect
+//     lang : le langage du flux de données retourné ("xml" ou "json") ; "xml" par défaut si le paramètre est absent ou incorrect 
 // Le service retourne un flux de données XML ou JSON contenant un compte-rendu d'exécution
 
 // Les paramètres doivent être passés par la méthode GET :
@@ -24,8 +24,8 @@ $pseudoAsupprimer = ( empty($this->request['pseudoAsupprimer'])) ? "" : $this->r
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
-if ($lang != "json") $lang = "xml";
-
+if ($lang != "json") $lang = "xml"; 
+ 
 // La méthode HTTP utilisée doit être GET
 if ($this->getMethodeRequete() != "GET")
 {	$msg = "Erreur : méthode HTTP incorrecte.";
