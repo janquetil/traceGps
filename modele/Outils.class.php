@@ -32,6 +32,7 @@
 // ces méthodes statiques sont appelées avec la notation suivante :
 //     Outils::methode(parametres);
  
+
 // début de la classe Outils
 class Outils
 {
