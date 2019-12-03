@@ -449,7 +449,7 @@ class DAO
         $requete->execute();
         
         $tableau = array();
-        
+         
         while($li = $requete->fetch(PDO::FETCH_OBJ)){
             $trace = new Trace($li->id, $li->dateDebut, $li->dateFin, $li->terminee, $li->idUtilisateur);
             

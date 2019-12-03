@@ -23,7 +23,7 @@ $pseudoDestinataire = ( empty($this->request['pseudoDestinataire'])) ? "" : $thi
 $textMessage = ( empty($this->request['texteMessage'])) ? "" : $this->request['texteMessage'];
 $nomPrenom = ( empty($this->request['nomPrenom'])) ? "" : $this->request['nomPrenom'];
 $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
-
+ 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
 

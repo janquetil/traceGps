@@ -24,7 +24,7 @@
     if ( empty ($_REQUEST ["altitude"]) == true)  $altitude = "";  else   $altitude = $_REQUEST ["altitude"];
     if ( empty ($_REQUEST ["rythmeCardio"]) == true)  $rythmeCardio = "";  else   $rythmeCardio = $_REQUEST ["rythmeCardio"];
     if ( empty ($_REQUEST ["lang"]) == true) $lang = "";  else $lang = strtolower($_REQUEST ["lang"]);
-    
+     
     $idRelatif = 0;
     
     // "xml" par défaut si le paramètre lang est absent ou incorrect

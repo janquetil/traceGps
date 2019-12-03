@@ -15,7 +15,7 @@ class Point
         $this->longitude = $uneLongitude;
         $this->altitude = $uneAltitude;
     }
-    
+     
     public function getLatitude()	{return $this->latitude;}
     public function setLatitude($uneLatitude) {$this->latitude = $uneLatitude;}
     

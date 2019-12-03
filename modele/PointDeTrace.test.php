@@ -45,7 +45,7 @@ echo ("Temps cumule (hh:mm:ss) : " . $unPoint1->getTempsCumuleEnChaine() . "<br>
 echo ("Distance cumulée (Km) : " . $unPoint1->getDistanceCumulee() . "<br>");
 echo ("Vitesse (Km/h) : " . $unPoint1->getVitesse() . "<br>");
 echo ('<br>');
-
+ 
 // tests des mutateurs (set)
 $unPoint2 = new PointDeTrace(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 $unPoint2->setIdTrace(1);

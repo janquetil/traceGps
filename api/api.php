@@ -29,7 +29,7 @@ class Api extends Rest
             case "gettouslesutilisateurs" : {$this->GetTousLesUtilisateurs(); break;}
             case "supprimerunutilisateur" : {$this->SupprimerUnUtilisateur(); break;}
             case "validerdemandeautorisation" : {$this->ValiderDemandeAutorisation(); break;}
-            
+             
             // services web restant à développer
             case "demandermdp" : {$this->DemanderMdp(); break;}
             case "getlesparcoursdunutilisateur" : {$this->GetLesParcoursDunUtilisateur(); break;}

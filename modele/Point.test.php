@@ -18,7 +18,7 @@ include_once ('Point.class.php');
 
 <?php
 echo "<h3>Test de la classe Point</h3>";
-
+ 
 // appel du constructeur et tests des accesseurs (get)
 $uneLatitude = 48.5;
 $uneLongitude = -1.6;

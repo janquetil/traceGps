@@ -12,7 +12,7 @@
 	<style type="text/css">body {font-family: Arial, Helvetica, sans-serif; font-size: small;}</style>
 </head>
 <body>
-
+ 
 <?php
 $PARAM_HOTE = "localhost";		// si le sgbd est sur la même machine que le serveur php
 $PARAM_PORT = "3306";			// le port utilisé par le serveur MySql

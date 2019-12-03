@@ -25,7 +25,7 @@
     if ( $pseudo == "" || $mdpSha1 == "" || $idTrace == "" || $lang == "")
     {	$msg = "Erreur : données incomplètes.";
     }
-    
+     
     else
     {	// il faut être utilisateur pour supprimer un parcours
         if ( $dao->getNiveauConnexion($pseudo, $mdpSha1) == 0 )

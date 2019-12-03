@@ -103,7 +103,7 @@ class Rest {
 			default:
 				$this->envoyerReponse('',406);
 				break;
-		}
+		} 
 	}		
 	
 	// Cette méthode nettoie les données envoyées avec la requête
