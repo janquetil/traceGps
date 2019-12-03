@@ -30,9 +30,14 @@
 //     include_once ('../modele/Outils.class.php');     (si la page et la classe Outils sont dans des dossiers différents)
 
 // ces méthodes statiques sont appelées avec la notation suivante :
-//     Outils::methode(parametres); 
-//     Outils::methode(parametres);//github.com/janquetil/tracegps.git
-// début de la classe Outils
+//     Outils::methode(parametres);
+ 
+
+// début de la classe Outils// ces méthodes statiques sont appelées avec la notation suivante :
+//     Outils::methode(parametres);
+ 
+
+
 class Outils
 {
 
