@@ -29,7 +29,7 @@
 // connexion du serveur web à la base MySQL
 include_once ('DAO.class.php');
 $dao = new DAO();
-
+ 
 
 // test de la méthode xxxxxxxxxxxxxxxxxxxxxxxxxxx ----------------------------------------------------------
 // modifié par xxxxxxxxxxxxxxxxx le xxxxxxxxxx

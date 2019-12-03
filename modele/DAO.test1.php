@@ -29,7 +29,7 @@
 // connexion du serveur web à la base MySQL
 include_once ('DAO.class.php');
 $dao = new DAO();
-
+ 
 // test de la méthode creerUnPointDeTrace ---------------------------------------------------------
 // modifié par Jim le 13/8/2018
 echo "<h3>Test de creerUnPointDeTrace : </h3>";

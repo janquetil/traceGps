@@ -23,7 +23,7 @@ $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
-
+ 
 // initialisation du nombre de réponses
 $nbReponses = 0;
 $lesUtilisateurs = array();

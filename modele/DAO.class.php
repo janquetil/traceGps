@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Projet TraceGPS
 // fichier : modele/DAO.class.php   (DAO : Data Access Object)
 // Rôle : fournit des méthodes d'accès à la bdd tracegps (projet TraceGPS) au moyen de l'objet PDO
@@ -449,7 +449,7 @@ class DAO
         $requete->execute();
         
         $tableau = array();
-        
+         
         while($li = $requete->fetch(PDO::FETCH_OBJ)){
             $trace = new Trace($li->id, $li->dateDebut, $li->dateFin, $li->terminee, $li->idUtilisateur);
             

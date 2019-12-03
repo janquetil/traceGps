@@ -43,7 +43,7 @@ class Utilisateur
     
     public function getNiveau() {return $this->niveau;}
     public function setNiveau($unNiveau) {$this->niveau = $unNiveau;}
-    
+     
     public function getDateCreation() {return $this->dateCreation;}
     public function setDateCreation($uneDateCreation) {$this->dateCreation = $uneDateCreation;}
     

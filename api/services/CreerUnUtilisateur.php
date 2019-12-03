@@ -25,7 +25,7 @@ $lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";
-
+ 
 // La méthode HTTP utilisée doit être GET
 if ($this->getMethodeRequete() != "GET")
 {	$msg = "Erreur : méthode HTTP incorrecte.";
