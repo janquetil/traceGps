@@ -9,7 +9,7 @@
     // Les paramètres peuvent être passés par la méthode POST (à privilégier en exploitation pour la confidentialité des données) :
     //     http://<hébergeur>/SupprimerUnUtilisateur.php
     
-    // connexion du serveur web à la base MySQL
+    // connexion du serveur web à la base MySQL 
     include_once ('../modele/DAO.class.php');
     $dao = new DAO();
     

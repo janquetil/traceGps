@@ -11,7 +11,7 @@ class Utilisateur
     private $niveau;	// niveau d'accès : 1 = utilisateur (pratiquant ou proche)    2 = administrateur
     private $dateCreation;	// date de création du compte
     private $nbTraces;	// nombre de traces stockées actuellement
-    private $dateDerniereTrace;	// date de début de la dernière trace
+    private $dateDerniereTrace;	// date de début de la dernière trace 
     
     public function __construct($unId, $unPseudo, $unMdpSha1, $uneAdrMail, $unNumTel, $unNiveau,
         $uneDateCreation, $unNbTraces, $uneDateDerniereTrace) {

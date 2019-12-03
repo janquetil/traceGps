@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Projet TraceGPS
 // fichier : modele/DAO.class.php   (DAO : Data Access Object)
 // Rôle : fournit des méthodes d'accès à la bdd tracegps (projet TraceGPS) au moyen de l'objet PDO
@@ -27,7 +27,7 @@
 // supprimerUneAutorisation($idAutorisant, $idAutorise) : supprime l'autorisation ($idAutorisant, $idAutorise) dans la bdd
 // getLesPointsDeTrace($idTrace) : fournit la collection des points de la trace $idTrace
 // getUneTrace($idTrace) : fournit un objet Trace à partir de identifiant $idTrace
-// getToutesLesTraces() : fournit la collection de toutes les traces
+// getToutesLesTraces() : fournit la collection de toutes les traces 
 // getMesTraces($idUtilisateur) : fournit la collection des traces de l'utilisateur $idUtilisateur
 // getLesTracesAutorisees($idUtilisateur) : fournit la collection des traces que l'utilisateur $idUtilisateur a le droit de consulter
 // creerUneTrace(Trace $uneTrace) : enregistre la trace $uneTrace dans la bdd

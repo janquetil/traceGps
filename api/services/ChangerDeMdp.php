@@ -6,7 +6,7 @@
 // Rôle : ce service permet à un utilisateur de changer son mot de passe
 // Le service web doit recevoir 5 paramètres :
 //     pseudo : le pseudo de l'utilisateur
-//     mdp : l'ancien mot de passe hashé en sha1
+//     mdp : l'ancien mot de passe hashé en sha1 
 //     nouveauMdp : le nouveau mot de passe
 //     confirmationMdp : la confirmation du nouveau mot de passe
 //     lang : le langage du flux de données retourné ("xml" ou "json") ; "xml" par défaut si le paramètre est absent ou incorrect

@@ -47,7 +47,7 @@ else {
         }
         else{
             if (!$dao->getUneTrace($idTrace)){
-                $msg = "Erreur : parcours inexistant.";
+                $msg = "Erreur : parcours inexistant."; 
                 $code_reponse = 400;
             }
             else {

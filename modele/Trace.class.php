@@ -29,7 +29,7 @@ class Trace
     public function setDateHeureFin($uneDateHeureFin) {$this->dateHeureFin= $uneDateHeureFin;}
     
     public function getTerminee() {return $this->terminee;}
-    public function setTerminee($terminee) {$this->terminee = $terminee;}
+    public function setTerminee($terminee) {$this->terminee = $terminee;} 
     
     public function getIdUtilisateur() {return $this->idUtilisateur;}
     public function setIdUtilisateur($unIdUtilisateur) {$this->idUtilisateur = $unIdUtilisateur;}

@@ -26,7 +26,7 @@ class Point
     public function setAltitude($uneAltitude) {$this->altitude = $uneAltitude;}
     
     public function toString() {
-        $msg = "latitude : " . $this->latitude . "<br>";
+        $msg = "latitude : " . $this->latitude . "<br>"; 
         $msg .= "longitude : " . $this->longitude . "<br>";
         $msg .= "altitude : " . $this->altitude . "<br>";
         return $msg;
