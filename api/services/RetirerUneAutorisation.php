@@ -22,7 +22,7 @@ $pseudo = ( empty($this->request['pseudo'])) ? "" : $this->request['pseudo'];
 $mdpSha1 = ( empty($this->request['mdp'])) ? "" : $this->request['mdp'];
 $pseudoARetirer = ( empty($this->request['pseudoARetirer'])) ? "" : $this->request['pseudoARetirer'];
 $texteMessage = ( empty($this->request['texteMessage'])) ? "" : $this->request['texteMessage'];
-$lang = ( empty($this->request['lang'])) ? "" : $this->request['lang'];
+$lang = ( empty($this->request['lang'])) ? "" : $this->request['lang']; 
 
 // "xml" par défaut si le paramètre lang est absent ou incorrect
 if ($lang != "json") $lang = "xml";

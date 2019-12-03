@@ -30,6 +30,7 @@ echo ('<b>Test de la méthode convertirEnDateFR : </b><br>');
 echo ('$uneDateUS : ' . $uneDateUS . '<br>');
 echo ('$uneDateFR : ' . $uneDateFR . '<br>');
 echo ('<br>');
+
  
 // test de la méthode convertirEnDateUS------------------------------------------------------------
 $uneDateFR = '16/05/2007';

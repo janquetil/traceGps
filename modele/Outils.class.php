@@ -31,7 +31,7 @@
 
 // ces méthodes statiques sont appelées avec la notation suivante :
 //     Outils::methode(parametres); 
-
+//     Outils::methode(parametres);//github.com/janquetil/tracegps.git
 // début de la classe Outils
 class Outils
 {

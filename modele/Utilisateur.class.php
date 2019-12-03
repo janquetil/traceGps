@@ -26,7 +26,7 @@ class Utilisateur
             $this->dateDerniereTrace = $uneDateDerniereTrace;
     }
     
-    public function getId() {return $this->id;}
+    public function getId() {return $this->id;} 
     public function setId($unId) {$this->id = $unId;}
     
     public function getPseudo() {return $this->pseudo;}
