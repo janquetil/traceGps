@@ -49,7 +49,7 @@ else
             $unParcours = $dao->getUneTrace($idTrace);
             if ($unParcours == null)
             { 
-                $msg = "Erreur : Parcours inexistant.";
+                $msg = "Erreur : parcours inexistant.";
                 $code_reponse = 400;
             }
             else
